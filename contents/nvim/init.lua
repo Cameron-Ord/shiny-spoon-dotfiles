@@ -1,4 +1,4 @@
-vim.o.termguicolors = false
+vim.o.termguicolors = true
 vim.o.number = true
 
 vim.cmd('colorscheme catppuccin_mocha')
