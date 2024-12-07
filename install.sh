@@ -2,6 +2,9 @@ sudo cp contents/dnf.conf /etc/dnf/dnf.conf
 
 sudo dnf install picom clang lldb llvm gdb gcc python python-pip nodejs npm git i3 sddm make cmake unzip ninja-build gettext curl glibc-gconv-extra dmenu tmux alacritty nano lua lua-devel httpd mariadb mariadb-server 
 
+git config --global user.name "Cameron-Ord"
+git config --global user.email "cameron.ian.ronald.ord@outlook.com"
+
 dir=$(pwd)
 git clone https://github.com/neovim/neovim ~/neovim
 cd ~/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
