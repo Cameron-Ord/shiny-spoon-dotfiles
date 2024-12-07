@@ -6,7 +6,7 @@ sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
-sudo dnf install picom clang lldb llvm gdb gcc python python-pip nodejs npm git i3 sddm make cmake unzip ninja-build gettext curl glibc-gconv-extra dmenu tmux alacritty nano lua lua-devel httpd mariadb mariadb-server 
+sudo dnf install picom clang lldb llvm gdb gcc python python-pip nodejs npm git i3 sddm make cmake unzip ninja-build gettext curl glibc-gconv-extra dmenu tmux alacritty nano lua lua-devel httpd mariadb mariadb-server feh Xorg
 
 git config --global user.name "Cameron-Ord"
 git config --global user.email "cameron.ian.ronald.ord@outlook.com"
@@ -37,9 +37,7 @@ cd $dir
 
 mkdir -p ~/wallpapers/
 cd ~/wallpapers/
-
 curl -O https://w.wallhaven.cc/full/yx/wallhaven-yxdrex.png
-cp *.png ~/wallpapers/
 
 sudo systemctl start httpd
 sudo systemctl enable httpd
