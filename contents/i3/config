@@ -25,8 +25,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+#xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
@@ -41,15 +40,19 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-exec killall -q picom
-exec --no-startup-id picom &
+exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 60
 
+exec killall -q picom
+exec killall -q dunst
+
+exec --no-startup-id dunst & disown
+exec --no-startup-id picom & disown 
 exec --no-startup-id feh --bg-fill --randomize ~/wallpapers/
 
-gaps inner 8px
+gaps inner 6px
 gaps outer 6px
-gaps top 6px
-gaps bottom 6px
+gaps top 18px
+gaps bottom 18px
 default_border pixel 4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -66,7 +69,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show drun -theme ~/.local/share/rofi/themes/material.rasi
+bindsym $mod+d exec dmenu_run -b -i -nb "#1e1e2e" -nf "#cdd6f4" -sb "#f5c2e7" -sf "#1e1e2e" -p "Run: "
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
