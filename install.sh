@@ -1,5 +1,11 @@
 sudo cp contents/dnf.conf /etc/dnf/dnf.conf
-
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+sudo dnf update @core
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 sudo dnf install picom clang lldb llvm gdb gcc python python-pip nodejs npm git i3 sddm make cmake unzip ninja-build gettext curl glibc-gconv-extra dmenu tmux alacritty nano lua lua-devel httpd mariadb mariadb-server 
 
 git config --global user.name "Cameron-Ord"
