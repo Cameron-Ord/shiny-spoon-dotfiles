@@ -1,6 +1,6 @@
 sudo cp contents/dnf.conf /etc/dnf/dnf.conf
 
-sudo dnf install picom clang lldb llvm gdb gcc python python-pip nodejs npm git i3 sddm make cmake unzip ninja-build gettext curl glibc-gconv-extra dmenu tmux alacritty nano lua lua-devel
+sudo dnf install picom clang lldb llvm gdb gcc python python-pip nodejs npm git i3 sddm make cmake unzip ninja-build gettext curl glibc-gconv-extra dmenu tmux alacritty nano lua lua-devel httpd mariadb mariadb-server 
 
 dir=$(pwd)
 git clone https://github.com/neovim/neovim ~/neovim
@@ -32,3 +32,5 @@ cd ~/wallpapers/
 curl -O https://w.wallhaven.cc/full/yx/wallhaven-yxdrex.png
 cp *.png ~/wallpapers/
 
+sudo systemctl start httpd
+sudo systemctl enable httpd
