@@ -15,6 +15,7 @@ sudo cp -r contents/i3 $config_dir
 sudo cp -r contents/alacritty $config_dir
 sudo cp -r contents/picom $config_dir
 sudo cp contents/.tmux.conf $HOME
+sudo cp contents/.bashrc $HOME
 
 sudo cp -r contents/nvim $config_dir
 cd ~/.config/nvim
